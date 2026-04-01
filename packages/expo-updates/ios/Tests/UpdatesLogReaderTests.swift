@@ -22,6 +22,7 @@ struct UpdatesLogReaderTests {
     try await Task.sleep(nanoseconds: 1_000_000_000)
 
     let date2 = Date()
+    try await Task.sleep(nanoseconds: 1_000_000_000)
     await logWarnAsync(message: "Test message", code: .assetsFailedToLoad, updateId: "myUpdateId", assetId: "myAssetId")
 
     let entries1: [String] = logReader.getLogEntries(newerThan: date1)
